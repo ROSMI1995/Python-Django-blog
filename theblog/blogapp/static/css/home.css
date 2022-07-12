@@ -1,0 +1,15 @@
+
+#head3{
+	border: 2px solid black;
+
+}
+#head2{
+	text-decoration: none;
+}
+
+.carousel-item{
+	height: 320px;
+}
+.card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }

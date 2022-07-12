@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<!--templates/blog/blog_list.html-->
+{% block title %}Delete Blog Post{% endblock %}
+
+{% block container %}
+
+{% if user.is_authenticated %}
+
+
+<h2>Delete Post</h2><br>
+<h3>Delete : {{ post.title }}</h3><br>
+
+<div class="form-group">
+	<form method="POST">
+		{% csrf_token %}
+		<strong>Are you sure?!</strong><br>
+		<button class="btn btn-success">Delete Post</button>
+
+	
+	</form>
+{% else %}
+ <p>Unauthorised Acess.Login to make changes<br>
+    <a class=" nav-link btn-primary" href="{% url 'login' %}">Login</a></p>
+ {% endif %}
+</div>
+
+{% endblock %}
+
+	
+
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<!--templates/blog/blog_list.html-->
+{% block title %} Login {% endblock %}
+
+{% block container %}
+
+<h2>Edit Setting</h2><br>
+
+
+{{ user.profile.bio }}<br>
+<div class="d-flex">
+	<form method="POST">
+		{% csrf_token %}
+		<!-- python inbuild form!-->
+		{{ form.as_p }}
+		<button class="btn btn-success">Update Profile Settings</button>
+
+	
+	</form>
+</div>
+
+{% endblock %}
+
+	
+
+

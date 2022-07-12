@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<!--templates/blog/blog_list.html-->
+<title>Add Comment</title>
+{% block title %}  {% endblock %}
+
+{% block container %}
+
+<h2>Add Comment</h2>
+
+		<div class="d-flex">
+			<form method="POST">
+				{% csrf_token %}
+				<!-- python inbuild form!-->
+				{{ form.as_p }}
+				<button class="btn btn-success">Publish</button>
+
+	
+			</form>
+
+
+{% endblock %}
+
+	
+
+

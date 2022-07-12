@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!--templates/blog/blog_list.html-->
+{% block title %}Edit Blog Post{% endblock %}
+
+{% block container %}
+
+<h2>Update Post...</h2>
+{% if user.is_authenticated %}
+	{% if user.id == post.author.id %}
+		<div class="form-group">
+			<form method="POST">
+				{% csrf_token %}
+				<!-- python inbuild form!-->
+				{{ form.media}}
+				{{ form.as_p }}
+				<button class="btn btn-success">Update</button>
+	{% else %}
+			You are not allowed to edit!...
+	{% endif %}
+{% else %}
+ <p>Unauthorised Acess.Login to make changes<br>
+    <a class=" nav-link btn-primary" href="{% url 'login' %}">Login</a></p>
+ {% endif %}
+
+	
+	</form>
+</div>
+
+{% endblock %}
+
+	
+
+

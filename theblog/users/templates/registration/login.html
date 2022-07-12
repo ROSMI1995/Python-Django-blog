@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<!--templates/blog/blog_list.html-->
+{% block title %} Login {% endblock %}
+
+{% block container %}
+
+<h2>Login</h2>
+<div class="d-flex">
+	<form method="POST">
+		{% csrf_token %}
+		<!-- python inbuild form!-->
+		
+			<div class="mb-3">
+    			<label for="exampleInputEmail1" class="form-label">Username</label>
+   				<input type="text" class="form-control" name="username">
+   
+  			</div>
+ 			<div class="mb-3">
+    			<label for="exampleInputPassword1" class="form-label">Password</label>
+    			<input type="password" class="form-control" name="password">
+  			</div>
+
+  			
+			<button class="btn btn-success">Login</button><br><br>
+
+	</form>
+
+			<div class="mb-3 form-check">
+    			<small id="emailHelp" class="form-text text-muted">Not A User? <a href="{% url 'register' %}">Register Here...</a></small>
+  			</div>
+
+	
+	
+</div>
+
+{% endblock %}
+
+	
+
+

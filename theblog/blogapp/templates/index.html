@@ -1,0 +1,28 @@
+{% block sidebar %}
+
+<style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+<div class="card my-2">
+        <h5 class="card-header text-center">Trending Authers</h5>
+       
+        <div class="card-body">
+        {% for post in object_list %}
+            {% if post.author.profile.id %}
+                <p class="card-title card text-center text-capitalize text-decoration-none"> <a href="{% url 'show_profile_page' post.author.profile.id %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></p>
+            {% endif %}
+        
+        {% endfor %}
+        </div>
+</div>
+</div>
+
+
+
+{% endblock sidebar %}

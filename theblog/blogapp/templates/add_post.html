@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<!--templates/blog/blog_list.html-->
+<title>Add Post</title>
+{% block title %}  {% endblock %}
+
+{% block container %}
+
+<h2>Add Articles</h2>
+{% if user.is_authenticated %}
+
+<div class="d-flex">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<!-- python inbuild form!-->
+		{{ form.media }}
+		{{ form.as_p }}
+		<button class="btn btn-success">Post</button>
+
+	
+	</form>
+
+	<script >
+		var name = "{{ user.id }}";
+		document.getElementById('user').value
+				= name;
+	</script>
+{% else %}
+ <p>Unauthorised Acess.Login to make changes<br>
+    <a class=" nav-link btn-primary" href="{% url 'login' %}">Login</a></p>
+ {% endif %}
+</div>
+
+{% endblock %}
+
+	
+
+
